@@ -2,11 +2,10 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
 name: Build JSON from CSV
-
 defaults:
- run:
-  working-directory: ./csvconverter
-  
+  run:
+    shell: bash
+    working_directory: ./csvconverter
 
 on:
   push:
@@ -31,6 +30,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: csvconverter/package-lock.json
     - run: npm run bruh
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
