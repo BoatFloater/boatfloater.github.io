@@ -31,6 +31,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: csvconverter/package-lock.json
+    - run: npm install
     - run: npm run bruh
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
