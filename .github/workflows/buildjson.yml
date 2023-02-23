@@ -5,7 +5,7 @@ name: Build JSON from CSV
 defaults:
   run:
     shell: bash
-    working_directory: ./csvconverter
+    working-directory: ./csvconverter
 
 on:
   push:
